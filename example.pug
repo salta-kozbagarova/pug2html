@@ -1,0 +1,39 @@
+doctype html
+html(lang='en')
+  head
+    title Jade
+    script(type='text/javascript').
+      const foo = true;
+      let bar = function() {};
+      if (foo) {
+      bar(1 + 5)
+      }
+  body
+    h1 Jade - node template engine
+    img dfvdfvdf
+    #container.col
+    .onlyclass.andclass Sscsdcsdsdcssc
+      span Whatsup
+    div
+      p You are amazing
+      p
+        | Jade is a terse and simple
+        | templating language with a
+        | strong focus on performance
+        | and powerful features.
+      ul
+        li Item 1
+        li Item 2
+          a(href='google.com') Google
+          
+          a(class='button' href='google.com') Google
+          
+          a(class='button', href='google.com') Google
+        li Item 3
+        li
+          | Item 4
+          ul
+            li
+              | Subitem 4.1
+        li Item 5
+      a(href='http://google.com')
