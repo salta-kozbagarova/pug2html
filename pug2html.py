@@ -12,11 +12,14 @@ indent_tags = {}
 first_ind_len = None
 
 
+# Gets the number of indents before a tag
 def get_indent_length(str):
     ind_len = len(str) - len(str.lstrip())
     return ind_len
 
 
+# Removes all stored tags with an indent higher
+# than `start_point` from `indent_tags` dict
 def clear_indent_tags(start_point):
     keys = indent_tags.keys()    
     keys = list(filter(lambda x: x >= start_point, keys))
@@ -112,6 +115,11 @@ if __name__ == "__main__":
             else:
                 tag = splitted_line.pop(0)
                 splitted_line = ' '.join(splitted_line)
+
+        if line == 'doctype html':
+        	html_line = '<!DOCTYPE html>\n'
+        	html_lines.append(html_line)
+        	continue
 
         if tag in tags.paired_tags:
             indent_tags[ind_len] = {'tag': tag, 'type': 'paired'}
